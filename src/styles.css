@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #080503;
+  --color-ink-raised: #120c08;
+  --color-cream: #fff8ee;
+  --color-cream-soft: #f5eadc;
+  --color-muted: #cbb8a4;
+  --color-ember: #ff9f45;
+  --color-ember-hot: #ffad61;
+  --color-ember-deep: #3a1608;
+  --color-line: #6b381d;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cinzel", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    background: var(--color-ink);
+    color: var(--color-cream);
+    overflow-x: hidden;
+  }
+}
+
+.hero-scene {
+  background-image: url("/hero-ab-cinematic.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.studio-button {
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.45rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  display: inline-flex;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.studio-button:hover {
+  transform: translateY(-2px);
+}
+
+.studio-button-primary {
+  color: var(--color-ember-deep);
+  background: linear-gradient(135deg, var(--color-ember), #d9661f);
+  box-shadow: 0 12px 38px #de661d40;
+}
+
+.studio-button-secondary {
+  color: var(--color-cream);
+  background: #0c07048c;
+  border: 1px solid #f08b449e;
+  backdrop-filter: blur(12px);
+}
+
+.project-card {
+  box-shadow: 0 22px 65px #00000061;
+}
+
+.project-card-art {
+  transition: transform 0.7s ease;
+}
+
+.project-card:hover .project-card-art {
+  transform: scale(1.06);
+}
+
+.project-card-newtcg .project-card-art {
+  background:
+    linear-gradient(180deg, #0000 20%, #070402e6 100%),
+    url("/new-tcg-preview.jpg") center / cover;
+}
+
+.project-card-dragonwilds .project-card-art {
+  background:
+    linear-gradient(135deg, #db501038, #0000 50%),
+    url("/storyboard/part-1-the-wrong-turn.jpg") center / cover;
+}
+
+.project-card-apex .project-card-art {
+  background:
+    linear-gradient(135deg, #db50104d, #0000 55%),
+    url("/hero-ab-cinematic.webp") center / cover;
+}
+
+.project-card-adamobytes .project-card-art {
+  background:
+    repeating-linear-gradient(90deg, #ffad5514 0 1px, #0000 1px 28px),
+    repeating-linear-gradient(0deg, #ffad550f 0 1px, #0000 1px 28px),
+    linear-gradient(160deg, #1a0d07 0%, #0b0705 55%, #241208 100%);
+}
+
+.project-card-aether .project-card-art {
+  background:
+    radial-gradient(circle at 28% 30%, #ffa44ad9 0 2px, #0000 3px) 0 0 / 86px 86px,
+    radial-gradient(circle at 73% 46%, #4ca4ffcc 0 2px, #0000 3px) 0 0 / 112px 112px,
+    linear-gradient(145deg, #0b111b, #130a07 72%);
+}
+
+.project-card-live .project-card-art {
+  background:
+    linear-gradient(135deg, #ef72262e, #0000 58%),
+    url("/og.jpg") center / cover;
+}
