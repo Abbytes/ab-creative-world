@@ -3,18 +3,18 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "AB Creative World";
+const APP_NAME = "AB Creative Studio Hub";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: `${APP_NAME} — Films, Games & Imagination` },
+      { title: `${APP_NAME} — Games, Films & Worlds` },
       {
         name: "description",
         content:
-          "Original films, interactive projects, and the creative journey behind every idea from AB Creative World.",
+          "One home for everything AB Creative World builds — playable games, the movie series, the cinematic storyboard, and the hub.",
       },
       { name: "theme-color", content: "#080503" },
     ],

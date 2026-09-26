@@ -114,3 +114,106 @@
     linear-gradient(135deg, #ef72262e, #0000 58%),
     url("/og.jpg") center / cover;
 }
+
+/* ---------- AB Creative Studio Hub ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fixed emblem badge — always visible, generous tap target */
+.emblem-badge {
+  box-shadow: 0 8px 30px #000000a6, 0 0 24px #ff9f454d;
+  transition: transform 0.2s ease;
+}
+.emblem-badge:hover {
+  transform: scale(1.08);
+}
+
+/* Cinematic chapter flow */
+.chapter {
+  /* each sticky chapter slides over the previous like a film cut */
+  will-change: transform;
+}
+
+.chapter-frame {
+  transform: scale(1.08);
+  transition: transform 6s ease-out;
+}
+
+.chapter-active .chapter-frame {
+  transform: scale(1);
+}
+
+.chapter-kicker,
+.chapter-title,
+.chapter-copy {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chapter-active .chapter-kicker {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.15s;
+}
+.chapter-active .chapter-title {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.3s;
+}
+.chapter-active .chapter-copy {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.45s;
+}
+
+/* letterbox bars grow in on the active scene */
+.letterbox {
+  height: 0;
+  transition: height 1s ease;
+  z-index: 5;
+}
+.chapter-active .letterbox {
+  height: clamp(28px, 6svh, 64px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .chapter-frame {
+    transform: none;
+    transition: none;
+  }
+  .chapter-kicker,
+  .chapter-title,
+  .chapter-copy {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .chapter-active .letterbox {
+    height: clamp(28px, 6svh, 64px);
+  }
+}
+
+/* scroll cue bounce */
+.scroll-cue {
+  animation: cue-bob 1.8s ease-in-out infinite;
+}
+@keyframes cue-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue { animation: none; }
+}
+
+/* card art rail */
+.card-rail {
+  scrollbar-width: thin;
+  scrollbar-color: #6b381d transparent;
+  -webkit-overflow-scrolling: touch;
+}

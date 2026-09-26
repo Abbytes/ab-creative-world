@@ -2,21 +2,24 @@ import { Link } from "@tanstack/react-router";
 import { NEW_TCG_URL, APEX_URL, MINER_URL, STUDIO } from "@/lib/studio";
 
 const tabs = [
-  { href: "/", label: "Home", internal: true },
+  { href: "/#top", label: "Home" },
+  { href: "/#games", label: "Games" },
+  { href: "/#series", label: "Series" },
+  { href: "/#storyboard", label: "Storyboard" },
+  { href: "/#hub", label: "Hub" },
   { href: "/work", label: "Work", internal: true },
-  { href: `${STUDIO}/storyboard`, label: "Storyboard", internal: false },
-  { href: `${STUDIO}/projects/spartas-revenge`, label: "Sparta’s Revenge", internal: false },
-  { href: `${STUDIO}/live`, label: "Live", internal: false },
-  { href: NEW_TCG_URL, label: "New TCG", internal: false },
-  { href: APEX_URL, label: "APEX", internal: false },
-  { href: MINER_URL, label: "Miner", internal: false },
-  { href: `${STUDIO}/aether`, label: "Aether", internal: false },
-  { href: `${STUDIO}/tip`, label: "Tip", internal: false },
+  { href: NEW_TCG_URL, label: "New TCG" },
+  { href: APEX_URL, label: "APEX" },
+  { href: MINER_URL, label: "Miner" },
+  { href: `${STUDIO}/aether`, label: "Aether" },
+  { href: `${STUDIO}/live`, label: "Live" },
 ];
 
-function Tab({ href, label, internal }: { href: string; label: string; internal: boolean }) {
+type Tab = { href: string; label: string; internal?: boolean };
+
+function Tab({ href, label, internal }: Tab) {
   const className =
-    "whitespace-nowrap rounded-full px-3 py-2 text-xs font-medium text-cream-soft/80 transition hover:bg-white/10 hover:text-cream sm:text-sm";
+    "whitespace-nowrap rounded-full px-4 py-3 text-xs font-medium text-cream-soft/80 transition hover:bg-white/10 hover:text-cream sm:text-sm";
   if (internal) {
     return (
       <Link to={href} className={className} activeProps={{ className: "bg-ember/15 text-ember-hot" }}>
@@ -35,12 +38,19 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-ink-raised/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-3 sm:px-6">
-        <Link to="/" className="flex shrink-0 items-center gap-2.5">
-          <span className="font-serif text-2xl font-black tracking-tight text-ember">AB</span>
-          <span className="text-sm font-extrabold uppercase tracking-wide text-cream-soft">
-            Creative World
+        <a href="/#top" className="flex shrink-0 items-center gap-2.5" aria-label="AB Creative Studio Hub — home">
+          <img
+            src="/hub/emblem.png"
+            alt=""
+            aria-hidden
+            className="h-9 w-9 rounded-full object-cover"
+            width={36}
+            height={36}
+          />
+          <span className="hidden text-sm font-extrabold uppercase tracking-wide text-cream-soft min-[420px]:block">
+            Studio Hub
           </span>
-        </Link>
+        </a>
         <nav
           className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto"
           aria-label="Primary"
