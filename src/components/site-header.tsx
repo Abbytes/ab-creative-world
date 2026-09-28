@@ -7,7 +7,7 @@ const tabs = [
   { href: `${STUDIO}/storyboard`, label: "Storyboard", internal: false },
   { href: `${STUDIO}/projects/spartas-revenge`, label: "Sparta’s Revenge", internal: false },
   { href: `${STUDIO}/live`, label: "Live", internal: false },
-  { href: NEW_TCG_URL, label: "New TCG", internal: false },
+  { href: NEW_TCG_URL, label: "Sigilbound", internal: false },
   { href: APEX_URL, label: "APEX", internal: false },
   { href: MINER_URL, label: "Miner", internal: false },
   { href: `${STUDIO}/aether`, label: "Aether", internal: false },
