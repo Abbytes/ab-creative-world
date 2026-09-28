@@ -1,6 +1,7 @@
 export const NEW_TCG_URL = "https://muse.ai/s/new-tcg-jxa63shzxpxa77";
 export const APEX_URL = "https://royal-rose-daisy-daisy.grok.me";
 export const MINER_URL = "https://bloom-cobalt-pearl-mint.grok.me";
+export const MYTHIC_URL = "https://mythic-realms.grok.me";
 export const STUDIO = "https://ab-creative-world.grok.me";
 
 export type WorldCard = {
@@ -14,6 +15,15 @@ export type WorldCard = {
 };
 
 export const worlds: WorldCard[] = [
+  {
+    eyebrow: "Epic card battle",
+    title: "Mythic Realms",
+    copy: "Five armies. Forty-card decks. Every fighter has their own attack move.",
+    href: MYTHIC_URL,
+    cta: "Play Mythic Realms",
+    external: true,
+    className: "project-card-mythic",
+  },
   {
     eyebrow: "New drop",
     title: "New TCG",
