@@ -77,6 +77,12 @@
   transform: scale(1.06);
 }
 
+.project-card-mythic .project-card-art {
+  background:
+    linear-gradient(180deg, #0000 18%, #07060ce6 100%),
+    url("https://mythic-realms.grok.me/og.jpg") center / cover;
+}
+
 .project-card-newtcg .project-card-art {
   background:
     linear-gradient(180deg, #0000 20%, #070402e6 100%),
