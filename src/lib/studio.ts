@@ -26,10 +26,10 @@ export const worlds: WorldCard[] = [
   },
   {
     eyebrow: "New drop",
-    title: "New TCG",
+    title: "Sigilbound",
     copy: "Forty creatures. Cinematic battles. Every card has its own attack movie.",
     href: NEW_TCG_URL,
-    cta: "Play New TCG",
+    cta: "Play Sigilbound",
     external: true,
     className: "project-card-newtcg",
   },
